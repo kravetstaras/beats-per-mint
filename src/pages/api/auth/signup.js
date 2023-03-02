@@ -35,9 +35,10 @@ async function handler(req, res) {
 	const hashedPassword = await hashPassword(password);
 
 	try {
-		const result = await db
-			.collection('users')
-			.insertOne({ email: email, password: hashedPassword });
+		db.collection('users').insertOne({
+			email: email,
+			password: hashedPassword,
+		});
 	} catch (error) {
 		client.close();
 		res.status(500).json({ message: 'saving user failed' });
