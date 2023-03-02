@@ -1,4 +1,5 @@
 import { getSession } from 'next-auth/client';
+import StartingPageContent from '@/components/StartingPage/StartingPage';
 
 export default function Home(props) {
 	return (

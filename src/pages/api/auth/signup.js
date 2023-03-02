@@ -5,7 +5,7 @@ async function handler(req, res) {
 	if (req.method !== 'POST') {
 		return;
 	}
-	const data = req.body;
+	const data = await req.body;
 	const { email, password } = data;
 
 	if (
@@ -22,7 +22,7 @@ async function handler(req, res) {
 	}
 
 	const client = await connectToDatabase();
-	const db = client.db();
+	const db = await client.db();
 
 	const existingUser = await db.collection('users').findOne({ email: email });
 
@@ -35,7 +35,7 @@ async function handler(req, res) {
 	const hashedPassword = await hashPassword(password);
 
 	try {
-		db.collection('users').insertOne({
+		const result = await db.collection('users').insertOne({
 			email: email,
 			password: hashedPassword,
 		});

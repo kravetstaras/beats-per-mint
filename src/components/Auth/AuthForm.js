@@ -47,12 +47,12 @@ function AuthForm() {
 				password: password,
 			});
 			if (!result.error) {
-				router.replace('/profile');
+				router.replace('/');
 			}
 		} else {
 			try {
-				const result = createUser(email, password);
-				console.log(result);
+				const result = await createUser(email, password);
+				console.log(result.message);
 			} catch (error) {
 				console.error(error.message);
 			}
