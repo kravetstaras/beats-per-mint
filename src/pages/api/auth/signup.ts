@@ -1,7 +1,12 @@
-import { connectToDatabase } from '/utils/db';
-import { hashPassword } from '/utils/auth';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { connectToDatabase } from '@/utils/db';
+import { hashPassword } from '@/utils/auth';
 
-async function handler(req, res) {
+type Data = {
+	message: string;
+};
+
+async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
 	if (req.method !== 'POST') {
 		return;
 	}

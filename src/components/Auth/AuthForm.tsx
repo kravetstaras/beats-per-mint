@@ -1,8 +1,8 @@
-import { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { signIn } from 'next-auth/client';
 import { useRouter } from 'next/router';
 
-async function createUser(email, password) {
+async function createUser(email: string, password: string) {
 	const response = await fetch('/api/auth/signup/', {
 		method: 'POST',
 		body: JSON.stringify({
@@ -34,11 +34,11 @@ function AuthForm() {
 		setIsLogin((prevState) => !prevState);
 	}
 
-	async function submitHandler(event) {
+	async function submitHandler(event: Event) {
 		event.preventDefault();
 
-		const email = inputEmailRef?.current.value;
-		const password = inputPasswordRef?.current.value;
+		const email = (inputEmailRef?.current as HTMLInputElement).value;
+		const password = (inputPasswordRef?.current as HTMLInputElement).value;
 
 		if (isLogin) {
 			const result = await signIn('credentials', {

@@ -1,8 +1,13 @@
 import NextAuth from 'next-auth';
 import Providers from 'next-auth/providers';
-import { verifyPassword } from '/utils/auth';
 
-import { connectToDatabase } from '/utils/db';
+import { verifyPassword } from '@/utils/auth';
+import { connectToDatabase } from '@/utils/db';
+
+type Credentials = {
+	email: string;
+	password: string;
+};
 
 export default NextAuth({
 	session: {
@@ -10,7 +15,7 @@ export default NextAuth({
 	},
 	providers: [
 		Providers.Credentials({
-			async authorize(credentials) {
+			async authorize(credentials: Credentials) {
 				const client = await connectToDatabase();
 
 				const usersCollection = client.db().collection('users');
