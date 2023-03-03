@@ -1,11 +1,11 @@
 import { getSession } from 'next-auth/client';
-import AuthForm from '@/components/Auth/AuthForm';
+import AuthForm from '@/components/auth/auth-form';
 
 function AuthPage() {
 	return <AuthForm />;
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: { req: any; }) {
 	const session = await getSession({ req: context.req });
 	if (session) {
 		return {
