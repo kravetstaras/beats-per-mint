@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, MutableRefObject } from 'react';
 import { signIn } from 'next-auth/client';
 import { useRouter } from 'next/router';
 
@@ -27,15 +27,15 @@ function AuthForm() {
 	const router = useRouter();
 	const [isLogin, setIsLogin] = useState(true);
 
-	const inputEmailRef = useRef();
-	const inputPasswordRef = useRef();
+	const inputEmailRef = useRef() as MutableRefObject<HTMLInputElement>;
+	const inputPasswordRef = useRef() as MutableRefObject<HTMLInputElement>;
 
 	function switchAuthModeHandler() {
 		setIsLogin((prevState) => !prevState);
 	}
 
-	async function submitHandler(event: Event) {
-		event.preventDefault();
+	async function submitHandler(event: Event | undefined) {
+		event?.preventDefault();
 
 		const email = (inputEmailRef?.current as HTMLInputElement).value;
 		const password = (inputPasswordRef?.current as HTMLInputElement).value;
@@ -46,7 +46,7 @@ function AuthForm() {
 				email: email,
 				password: password,
 			});
-			if (!result.error) {
+			if (!result?.error) {
 				router.replace('/');
 			}
 		} else {
@@ -54,7 +54,7 @@ function AuthForm() {
 				const result = await createUser(email, password);
 				console.log(result.message);
 			} catch (error) {
-				console.error(error.message);
+				console.error(error);
 			}
 		}
 	}
@@ -62,7 +62,7 @@ function AuthForm() {
 	return (
 		<section>
 			<h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
-			<form onSubmit={submitHandler}>
+			<form onSubmit={() => submitHandler(event)}>
 				<div>
 					<label htmlFor='email'>Your Email</label>
 					<input type='email' id='email' required ref={inputEmailRef} />

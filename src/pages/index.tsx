@@ -1,5 +1,5 @@
 import { getSession } from 'next-auth/client';
-import StartingPageContent from '@/components/starting-page/StartingPage';
+import StartingPageContent from '@/components/starting-page/';
 
 export default function Home() {
 	return (
@@ -9,7 +9,7 @@ export default function Home() {
 	);
 }
 
-export async function getServerSideProps(context: { req: any; }) {
+export async function getServerSideProps(context: { req: any }) {
 	const session = await getSession({ req: context.req });
 	if (!session) {
 		return {
