@@ -13,6 +13,8 @@ declare module '@mui/material/styles' {
       altoD3: React.CSSProperties['color'];
       scorpion: React.CSSProperties['color'];
       martinique: React.CSSProperties['color'];
+      mallard: React.CSSProperties['color'];
+      aquamarine: React.CSSProperties['color'];
     };
   }
 }
@@ -22,5 +24,6 @@ declare module '@mui/material/Button' {
     btnMortar: true;
     btnAlto: true;
     btnSulu: true;
+    btnMallard: true;
   }
 }

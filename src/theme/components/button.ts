@@ -9,11 +9,12 @@ export const btnMortar = {
   borderRadius: '30px',
   transition: '1s',
   textTransform: 'none',
+  whiteSpace: 'nowrap',
 
   '&:hover': {
-    background: '#CAED6B',
+    backgroundColor: '#85FFB6',
     color: '#fff',
-    boxShadow: '0 0 5px, 0 0 10px #CAED6B, 0 0 20px #CAED6B, 0 0 30px #CAED6B',
+    boxShadow: '0 0 5px, 0 0 10px #85FFB6, 0 0 20px #85FFB6, 0 0 30px #85FFB6',
   },
 
   '&:active': {
@@ -40,11 +41,12 @@ export const btnAlto = {
   borderRadius: '30px',
   transition: '1s',
   textTransform: 'none',
+  whiteSpace: 'nowrap',
 
   '&:hover': {
-    backgroundColor: '#EAF8C4',
-    color: '#4D384E',
-    boxShadow: '0 0 5px, 0 0 10px #EAF8C4, 0 0 20px #EAF8C4, 0 0 30px #EAF8C4',
+    backgroundColor: '#85FFB6',
+    color: '#fff',
+    boxShadow: '0 0 5px, 0 0 10px #85FFB6, 0 0 20px #85FFB6, 0 0 30px #85FFB6',
   },
 
   '&:active': {
@@ -77,11 +79,34 @@ export const btnSulu = {
   },
 
   '&:hover > a > svg': {
-    fill: '#CAED6B',
+    fill: '#fff',
   },
 
   '&:hover': {
-    backgroundColor: '#4D384E',
+    backgroundColor: '#85FFB6',
+    boxShadow: '0 0 5px, 0 0 10px #85FFB6, 0 0 20px #85FFB6, 0 0 30px #85FFB6',
+  },
+
+  '&:active': {
+    opacity: '.5',
+  },
+};
+
+export const btnMallard = {
+  fontSize: '32px',
+  lineHeight: '30px',
+  textAlign: 'center',
+  color: '#85FFB6',
+  padding: '8px 42px 10px 40px',
+  backgroundColor: '#172B16',
+  transition: '1s',
+  textTransform: 'none',
+  whiteSpace: 'nowrap',
+
+  '&:hover': {
+    backgroundColor: '#85FFB6',
+    color: '#fff',
+    boxShadow: '0 0 5px, 0 0 10px #85FFB6, 0 0 20px #85FFB6, 0 0 30px #85FFB6',
   },
 
   '&:active': {

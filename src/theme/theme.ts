@@ -1,6 +1,11 @@
 import { createTheme, CSSObject } from '@mui/material';
 
-import { btnMortar, btnAlto, btnSulu } from '@/theme/components/button';
+import {
+  btnMortar,
+  btnAlto,
+  btnSulu,
+  btnMallard,
+} from '@/theme/components/button';
 
 const theme = createTheme({
   palette: {
@@ -14,6 +19,8 @@ const theme = createTheme({
       altoD3: '#D3D3D3',
       scorpion: '#565656',
       martinique: '#342B52',
+      mallard: '#172B16',
+      aquamarine: '#85FFB6',
     },
   },
   components: {
@@ -32,6 +39,10 @@ const theme = createTheme({
             variant: 'btnSulu',
           },
           style: btnSulu as CSSObject,
+        },
+        {
+          props: { variant: 'btnMallard' },
+          style: btnMallard as CSSObject,
         },
       ],
     },
