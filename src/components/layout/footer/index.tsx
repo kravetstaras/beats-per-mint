@@ -7,12 +7,13 @@ import ButtonAlto from '@/components/ui/button-alto';
 
 import { josefinSans } from '@/fonts';
 import ButtonMontar from '@/components/ui/button-montar';
+import { footer } from '@/styles/footer';
 
 export default function Footer() {
   return (
-    <Box>
+    <Box sx={footer} component='footer'>
       <FooterNavigation />
-      <ButtonAlto
+      {/* <ButtonAlto
         click={() => console.log('ButtonAlto')}
         label='ButtonAlto'
         icon={<EditIcon fontSize='small' />}
@@ -21,10 +22,11 @@ export default function Footer() {
         click={() => console.log('ButtonAlto')}
         // isDisabled={true}
         label='ButtonMontar'
-      />
-      <p className={josefinSans.className}>
-        Beats Per Mint Site last updated November 2022
-      </p>
+      /> */}
+      <Box component='p' className={josefinSans.className}>
+        <span>Beats Per Mint Site</span>
+        <span>last updated November 2022</span>
+      </Box>
     </Box>
   );
 }

@@ -1,27 +1,23 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import TelegramIcon from '@mui/icons-material/Telegram';
+import InstagramIcon from '@mui/icons-material/Instagram';
+
+import ButtonSulu from '@/components/ui/button-sulu';
+
+const footerNavifations = [
+  { link: '#', icon: <TwitterIcon fontSize='large' />, id: 1 },
+  { link: '#', icon: <InstagramIcon fontSize='large' />, id: 2 },
+  { link: '#', icon: <TelegramIcon fontSize='large' />, id: 3 },
+];
 
 export default function FooterNavigation() {
-	const [value, setValue] = React.useState(0);
-
-	return (
-		<Box sx={{ width: 500 }}>
-			<BottomNavigation
-				showLabels
-				value={value}
-				onChange={(event, newValue) => {
-					setValue(newValue);
-				}}
-			>
-				<BottomNavigationAction label='Recents' icon={<RestoreIcon />} />
-				<BottomNavigationAction label='Favorites' icon={<FavoriteIcon />} />
-				<BottomNavigationAction label='Nearby' icon={<LocationOnIcon />} />
-			</BottomNavigation>
-		</Box>
-	);
+  return (
+    <Box component='div'>
+      {footerNavifations?.map((el) => (
+        <ButtonSulu key={el.id} icon={el.icon} link={el.link} />
+      ))}
+    </Box>
+  );
 }

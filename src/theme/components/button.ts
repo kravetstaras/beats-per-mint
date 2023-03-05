@@ -51,3 +51,40 @@ export const btnAlto = {
     opacity: '.5',
   },
 };
+
+export const btnSulu = {
+  boxSizing: 'border-box',
+  width: '48px',
+  height: '48px',
+  minWidth: '48px',
+  display: 'flex',
+  alightItems: 'center',
+  justifyContent: 'center',
+  backgroundColor: '#CAED6B',
+  color: '#4D384E',
+  borderRadius: '100%',
+  transition: '1s',
+
+  '& > a': {
+    display: 'flex',
+    alightItems: 'center',
+    justifyContent: 'center',
+    padding: '0',
+  },
+
+  '& > a > svg': {
+    fill: '#4D384E',
+  },
+
+  '&:hover > a > svg': {
+    fill: '#CAED6B',
+  },
+
+  '&:hover': {
+    backgroundColor: '#4D384E',
+  },
+
+  '&:active': {
+    opacity: '.5',
+  },
+};
