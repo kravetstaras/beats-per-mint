@@ -14,6 +14,7 @@ const projects = [
       'More details here',
     ],
     price: '$XX.XX or $X/month',
+    link: '/',
   },
   {
     id: '2',
@@ -27,6 +28,7 @@ const projects = [
       'More details here',
     ],
     price: '$XX.XX or $X/month',
+    link: '/',
   },
 ];
 
@@ -36,7 +38,15 @@ export default function DiscoverSection() {
       <h2>Discover BPMs</h2>
       {projects?.length > 0 &&
         projects.map((project) => (
-          <EventCard key={project.id} image={project.image} />
+          <EventCard
+            key={project.id}
+            image={project.image}
+            projectName={project.projectName}
+            projectOwner={project.projectOwner}
+            details={project.details}
+            price={project.price}
+            link={project.link}
+          />
         ))}
     </section>
   );
