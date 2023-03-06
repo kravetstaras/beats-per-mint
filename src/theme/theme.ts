@@ -46,6 +46,18 @@ const theme = createTheme({
         },
       ],
     },
+    // MuiTextField: {
+    //   variants: [
+    //     {
+    //       props: { variant: 'btnMortar' },
+    //       style: btnMortar as CSSObject,
+    //     },
+    //     {
+    //       props: { variant: 'btnMortar' },
+    //       style: btnMortar as CSSObject,
+    //     },
+    //   ],
+    // },
   },
 });
 

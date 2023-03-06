@@ -97,7 +97,7 @@ export const btnMallard = {
   lineHeight: '30px',
   textAlign: 'center',
   color: '#85FFB6',
-  padding: '8px 42px 10px 40px',
+  padding: '8px 52px 10px 50px',
   backgroundColor: '#172B16',
   transition: '1s',
   textTransform: 'none',
