@@ -24,9 +24,11 @@ export const headerNavBar = {
     color: '#4D384E',
     textDecoration: 'none',
     transition: '1s',
+    letterSpacing: '1px',
   },
 
   '& > a:hover, & > a:active': {
     fontWeight: '700',
+    letterSpacing: '0.14px',
   },
 };
