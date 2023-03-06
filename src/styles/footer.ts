@@ -13,7 +13,6 @@ export const footer = {
   backgroundColor: '#4D384E',
   borderRadius: '100px 100px 0px 0px',
   textTransform: 'none',
-  position: 'absolute',
 
   '& > div': {
     display: 'flex',

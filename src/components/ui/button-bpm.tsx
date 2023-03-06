@@ -11,17 +11,9 @@ type TButtonBPM = {
   link?: string;
   click?: () => void;
   isDisabled?: boolean;
-  variantType:
-    | 'text'
-    | 'outlined'
-    | 'btnMallard'
-    | 'contained'
-    | 'btnMortar'
-    | 'btnAlto'
-    | 'btnSulu'
-    | undefined;
+  variantType: 'btnMallard' | 'btnMortar' | 'btnAlto' | 'btnSulu';
   font?: NextFont;
-  type?: string;
+  type?: 'button' | 'submit' | 'reset' | undefined;
 };
 
 export default function ButtonBPM({
