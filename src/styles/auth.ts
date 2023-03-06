@@ -1,3 +1,5 @@
+import { relative } from 'path';
+
 export const authSection = {
   maxWidth: '1329px',
   margin: '0 auto',
@@ -14,6 +16,7 @@ export const authForm = {
   padding: '72px  0 37px 121px',
   textAligth: 'center',
   width: '50%',
+  position: 'relative',
 
   '& > h3': {
     margin: '0 auto 33px',
@@ -46,7 +49,16 @@ export const authForm = {
   },
 
   '& > form > button': {
-    margin: '0 auto',
+    margin: '40px 0 21px 100px',
+  },
+
+  '& > form > p': {
+    textAlign: 'center',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    fontSize: '20px',
+    lineHeight: '24px',
+    color: '#565656',
   },
 };
 
@@ -71,5 +83,40 @@ export const pistachioPart = {
   '& > h1 > span': {
     color: '#CAED6B',
     width: '430px',
+  },
+};
+
+export const inputControl = {
+  margin: '15px 0 15px 0',
+  display: 'flex',
+  flexDirection: 'column',
+
+  '& > div > input': {
+    boxSizing: 'border-box',
+    width: '416px',
+    height: '71px',
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+    backgroundColor: 'rgba(217, 217, 217, 0.46)',
+    padding: '5px 0 10px 15px',
+    fontSize: '20px',
+    lineHeight: '30px',
+  },
+
+  '& > div::after, & > div::before': {
+    display: 'none',
+  },
+
+  '& > label': {
+    outline: 'none',
+    border: 'none',
+    color: '#000000',
+    top: '-30px',
+    left: '-25px',
+    fontSize: '20px',
+    lineHeight: '30px',
+  },
+
+  '& > label > span': {
+    color: '#E75656',
   },
 };

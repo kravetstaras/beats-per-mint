@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { signIn } from 'next-auth/client';
 import { useRouter } from 'next/router';
-import TextField from '@mui/material/TextField';
+import Input from '@mui/material/Input';
 import { Box } from '@mui/material';
 
 import ButtonBPM from '@/components/ui/button-bpm';
 
-import { authForm } from '@/styles/auth';
+import { authForm, inputControl } from '@/styles/auth';
 import { baskervville } from '@/fonts';
 
 async function createUser(email: string, password: string) {
@@ -78,26 +78,26 @@ export default function AuthForm() {
         </span>
       </p>
       <form onSubmit={() => submitHandler(event)}>
-        <div>
-          <TextField
-            label='Email'
-            variant='filled'
+        <Box sx={inputControl}>
+          <label htmlFor='email'>
+            Email:<span>*</span>
+          </label>
+          <Input
             onChange={(e) => setInputEmail(e.target.value)}
             type='email'
             id='email'
-            required
           />
-        </div>
-        <div>
-          <TextField
+        </Box>
+        <Box sx={inputControl}>
+          <label htmlFor='password'>
+            Password:<span>*</span>
+          </label>
+          <Input
             id='password'
-            label='Password'
             type='password'
-            variant='filled'
             onChange={(e) => setInputPassword(e.target.value)}
-            required
           />
-        </div>
+        </Box>
 
         <ButtonBPM
           label={isLogin ? 'Log in' : 'Sign up'}
@@ -105,6 +105,7 @@ export default function AuthForm() {
           font={baskervville}
           type='submit'
         />
+        <p>Forgot your password?</p>
       </form>
     </Box>
   );
