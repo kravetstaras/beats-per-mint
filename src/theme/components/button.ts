@@ -12,9 +12,9 @@ export const btnMortar = {
   whiteSpace: 'nowrap',
 
   '&:hover': {
-    backgroundColor: '#85FFB6',
+    backgroundColor: '#1A9DC7',
     color: '#fff',
-    boxShadow: '0 0 5px, 0 0 10px #85FFB6, 0 0 20px #85FFB6, 0 0 30px #85FFB6',
+    boxShadow: '0 0 5px, 0 0 10px #1A9DC7, 0 0 20px #1A9DC7, 0 0 30px #1A9DC7',
   },
 
   '&:active': {
@@ -44,9 +44,9 @@ export const btnAlto = {
   whiteSpace: 'nowrap',
 
   '&:hover': {
-    backgroundColor: '#85FFB6',
+    backgroundColor: '#1A9DC7',
     color: '#fff',
-    boxShadow: '0 0 5px, 0 0 10px #85FFB6, 0 0 20px #85FFB6, 0 0 30px #85FFB6',
+    boxShadow: '0 0 5px, 0 0 10px #1A9DC7, 0 0 20px #1A9DC7, 0 0 30px #1A9DC7',
   },
 
   '&:active': {
@@ -83,8 +83,8 @@ export const btnSulu = {
   },
 
   '&:hover': {
-    backgroundColor: '#85FFB6',
-    boxShadow: '0 0 5px, 0 0 10px #85FFB6, 0 0 20px #85FFB6, 0 0 30px #85FFB6',
+    backgroundColor: '#1A9DC7',
+    boxShadow: '0 0 5px, 0 0 10px #1A9DC7, 0 0 20px #1A9DC7, 0 0 30px #1A9DC7',
   },
 
   '&:active': {
@@ -104,9 +104,9 @@ export const btnMallard = {
   whiteSpace: 'nowrap',
 
   '&:hover': {
-    backgroundColor: '#85FFB6',
+    backgroundColor: '#1A9DC7',
     color: '#fff',
-    boxShadow: '0 0 5px, 0 0 10px #85FFB6, 0 0 20px #85FFB6, 0 0 30px #85FFB6',
+    boxShadow: '0 0 5px, 0 0 10px #1A9DC7, 0 0 20px #1A9DC7, 0 0 30px #1A9DC7',
   },
 
   '&:active': {

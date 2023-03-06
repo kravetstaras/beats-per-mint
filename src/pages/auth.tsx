@@ -1,28 +1,29 @@
 import { getSession } from 'next-auth/client';
-import AuthForm from '@/components/auth/auth-form';
+
+import Auth from '@/components/auth';
 
 function AuthPage() {
-	return <AuthForm />;
+  return <Auth />;
 }
 
-export async function getServerSideProps(context: { req: any; }) {
-	const session = await getSession({ req: context.req });
-	if (session) {
-		return {
-			redirect: {
-				destination: '/',
-				permanent: false,
-			},
-			props: {
-				session,
-			},
-		};
-	}
-	return {
-		props: {
-			session,
-		},
-	};
+export async function getServerSideProps(context: { req: any }) {
+  const session = await getSession({ req: context.req });
+  if (session) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+      props: {
+        session,
+      },
+    };
+  }
+  return {
+    props: {
+      session,
+    },
+  };
 }
 
 export default AuthPage;

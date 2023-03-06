@@ -15,6 +15,7 @@ declare module '@mui/material/styles' {
       martinique: React.CSSProperties['color'];
       mallard: React.CSSProperties['color'];
       aquamarine: React.CSSProperties['color'];
+      curiousBlue: React.CSSProperties['color'];
     };
   }
 }

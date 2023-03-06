@@ -1,90 +1,111 @@
-import React, { useState, useRef, MutableRefObject } from 'react';
+import React, { useState } from 'react';
 import { signIn } from 'next-auth/client';
 import { useRouter } from 'next/router';
+import TextField from '@mui/material/TextField';
+import { Box } from '@mui/material';
+
+import ButtonBPM from '@/components/ui/button-bpm';
+
+import { authForm } from '@/styles/auth';
+import { baskervville } from '@/fonts';
 
 async function createUser(email: string, password: string) {
-	const response = await fetch('/api/auth/signup/', {
-		method: 'POST',
-		body: JSON.stringify({
-			email: email,
-			password: password,
-		}),
-		headers: {
-			'content-type': 'application/json',
-		},
-	});
+  const response = await fetch('/api/auth/signup/', {
+    method: 'POST',
+    body: JSON.stringify({
+      email: email,
+      password: password,
+    }),
+    headers: {
+      'content-type': 'application/json',
+    },
+  });
 
-	const data = await response.json();
+  const data = await response.json();
 
-	if (!response.ok) {
-		throw new Error(data.message || 'something went wrong');
-	}
+  if (!response.ok) {
+    throw new Error(data.message || 'something went wrong');
+  }
 
-	return data;
+  return data;
 }
 
-function AuthForm() {
-	const router = useRouter();
-	const [isLogin, setIsLogin] = useState(true);
+export default function AuthForm() {
+  const router = useRouter();
+  const [isLogin, setIsLogin] = useState(true);
 
-	const inputEmailRef = useRef() as MutableRefObject<HTMLInputElement>;
-	const inputPasswordRef = useRef() as MutableRefObject<HTMLInputElement>;
+  const [inputEmail, setInputEmail] = useState<string>('');
+  const [inputPassword, setInputPassword] = useState<string>('');
 
-	function switchAuthModeHandler() {
-		setIsLogin((prevState) => !prevState);
-	}
+  function switchAuthModeHandler() {
+    setIsLogin((prevState) => !prevState);
+  }
 
-	async function submitHandler(event: Event | undefined) {
-		event?.preventDefault();
+  async function submitHandler(event: Event | undefined) {
+    event?.preventDefault();
 
-		const email = (inputEmailRef?.current as HTMLInputElement).value;
-		const password = (inputPasswordRef?.current as HTMLInputElement).value;
+    if (isLogin) {
+      const result = await signIn('credentials', {
+        redirect: false,
+        email: inputEmail,
+        password: inputPassword,
+      });
+      if (!result?.error) {
+        router.replace('/');
+      }
+    } else {
+      try {
+        const result = await createUser(inputEmail, inputPassword);
+        console.log(result.message);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }
 
-		if (isLogin) {
-			const result = await signIn('credentials', {
-				redirect: false,
-				email: email,
-				password: password,
-			});
-			if (!result?.error) {
-				router.replace('/');
-			}
-		} else {
-			try {
-				const result = await createUser(email, password);
-				console.log(result.message);
-			} catch (error) {
-				console.error(error);
-			}
-		}
-	}
+  const underlineContent = isLogin
+    ? 'Subscribe to a project to sign up'
+    : 'Login with existing account';
 
-	return (
-		<section>
-			<h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
-			<form onSubmit={() => submitHandler(event)}>
-				<div>
-					<label htmlFor='email'>Your Email</label>
-					<input type='email' id='email' required ref={inputEmailRef} />
-				</div>
-				<div>
-					<label htmlFor='password'>Your Password</label>
-					<input
-						type='password'
-						id='password'
-						required
-						ref={inputPasswordRef}
-					/>
-				</div>
-				<div>
-					<button>{isLogin ? 'Login' : 'Create Account'}</button>
-					<button type='button' onClick={switchAuthModeHandler}>
-						{isLogin ? 'Create new account' : 'Login with existing account'}
-					</button>
-				</div>
-			</form>
-		</section>
-	);
+  return (
+    <Box sx={authForm}>
+      <h3>{isLogin ? 'Log in' : 'Sign up'}</h3>
+      <p>Please enter your information to log in to your account.</p>
+      <p className='strong'>
+        Don’t have an account?{' '}
+        <span className='underline' onClick={switchAuthModeHandler}>
+          {underlineContent}
+        </span>
+      </p>
+      <form onSubmit={() => submitHandler(event)}>
+        <div>
+          <TextField
+            label='Email'
+            variant='filled'
+            onChange={(e) => setInputEmail(e.target.value)}
+            type='email'
+            id='email'
+            required
+          />
+        </div>
+        <div>
+          <TextField
+            id='password'
+            label='Password'
+            type='password'
+            variant='filled'
+            onChange={(e) => setInputPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        <ButtonBPM
+          label={isLogin ? 'Log in' : 'Sign up'}
+          variantType='btnMallard'
+          font={baskervville}
+          type='submit'
+        />
+      </form>
+    </Box>
+  );
 }
-
-export default AuthForm;

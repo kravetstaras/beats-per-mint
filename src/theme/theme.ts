@@ -21,6 +21,7 @@ const theme = createTheme({
       martinique: '#342B52',
       mallard: '#172B16',
       aquamarine: '#85FFB6',
+      curiousBlue: '#1A9DC7',
     },
   },
   components: {

@@ -21,6 +21,7 @@ type TButtonBPM = {
     | 'btnSulu'
     | undefined;
   font?: NextFont;
+  type?: string;
 };
 
 export default function ButtonBPM({
@@ -31,6 +32,7 @@ export default function ButtonBPM({
   isDisabled,
   variantType,
   font,
+  type,
 }: TButtonBPM) {
   let validLabel;
 
@@ -40,6 +42,7 @@ export default function ButtonBPM({
 
   return (
     <Button
+      type={type && type}
       variant={variantType}
       onClick={click && click}
       disabled={isDisabled}>

@@ -14,7 +14,6 @@ export const footer = {
   borderRadius: '100px 100px 0px 0px',
   textTransform: 'none',
   position: 'absolute',
-  bottom: '0',
 
   '& > div': {
     display: 'flex',
