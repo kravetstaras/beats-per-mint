@@ -33,8 +33,8 @@ export default function Header() {
     <Box sx={header}>
       <Link href='/'>
         <Image
-          src='/assets/icons/logo.svg'
-          alt='BPM-logo'
+          src='/assets/icons/logo.png'
+          alt='BPM logo'
           width={80}
           height={80}
         />
