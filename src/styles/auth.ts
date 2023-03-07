@@ -1,5 +1,3 @@
-import { relative } from 'path';
-
 export const authSection = {
   maxWidth: '1329px',
   margin: '0 auto',
@@ -12,9 +10,8 @@ export const authSection = {
 export const authForm = {
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'flex-start',
-  padding: '72px  0 37px 121px',
-  textAligth: 'center',
+  alignItems: 'center',
+  padding: '150px  0 37px 121px',
   width: '50%',
   position: 'relative',
 
@@ -36,29 +33,37 @@ export const authForm = {
     textAlign: 'center',
   },
 
-  '& > .strong': {
-    fontWeight: '700',
-    margin: '0 0 33px 0',
-  },
-
-  '& > .strong > .underline': {
-    fontWeight: '400',
-    color: '#1A9DC7',
-    borderBottom: '1px solid #1A9DC7',
-    cursor: 'pointer',
+  '& > form': {
+    width: '100%',
+    padding: '0 40px 0 40px',
+    display: 'flex',
+    flexDirection: 'column',
   },
 
   '& > form > button': {
-    margin: '40px 0 21px 100px',
+    margin: '40px auto 20px',
   },
 
   '& > form > p': {
-    textAlign: 'center',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '20px',
     lineHeight: '24px',
     color: '#565656',
+  },
+
+  '& > form > .strong': {
+    textAlign: 'center',
+    fontWeight: '700',
+    margin: '0 0 33px 0',
+    cursor: 'pointer',
+  },
+
+  '& > form > .strong > .underline': {
+    fontWeight: '400',
+    color: '#1A9DC7',
+    borderBottom: '1px solid #1A9DC7',
+    cursor: 'pointer',
   },
 };
 
@@ -93,7 +98,7 @@ export const inputControl = {
 
   '& > div > input': {
     boxSizing: 'border-box',
-    width: '416px',
+    width: '100%',
     height: '71px',
     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
     backgroundColor: 'rgba(217, 217, 217, 0.46)',

@@ -18,6 +18,7 @@ export const eventCard = {
     position: 'relative',
     maxWidth: '456px',
     maxHeigth: '350px',
+    marginBottom: '27px',
   },
 
   '& > .image > img': {
@@ -40,4 +41,6 @@ export const eventCard = {
   '& > .image > button:hover': {
     color: '#fff',
   },
+
+  '& > .content > h4': {},
 };

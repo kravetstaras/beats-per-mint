@@ -57,26 +57,25 @@ export default function AuthForm() {
       try {
         const result = await createUser(inputEmail, inputPassword);
         console.log(result.message);
+        setIsLogin(true);
+        setInputEmail('');
+        setInputPassword('');
       } catch (error) {
         console.error(error);
       }
     }
   }
 
-  const underlineContent = isLogin
-    ? 'Subscribe to a project to sign up'
+  const underlineContent = isLogin ? 'click to sign up' : 'click to log in';
+
+  const strongContent = isLogin
+    ? 'Don’t have an account?'
     : 'Login with existing account';
 
   return (
     <Box sx={authForm}>
       <h3>{isLogin ? 'Log in' : 'Sign up'}</h3>
       <p>Please enter your information to log in to your account.</p>
-      <p className='strong'>
-        Don’t have an account?{' '}
-        <span className='underline' onClick={switchAuthModeHandler}>
-          {underlineContent}
-        </span>
-      </p>
       <form onSubmit={() => submitHandler(event)}>
         <Box sx={inputControl}>
           <label htmlFor='email'>
@@ -86,6 +85,7 @@ export default function AuthForm() {
             onChange={(e) => setInputEmail(e.target.value)}
             type='email'
             id='email'
+            value={inputEmail}
           />
         </Box>
         <Box sx={inputControl}>
@@ -95,17 +95,20 @@ export default function AuthForm() {
           <Input
             id='password'
             type='password'
+            value={inputPassword}
             onChange={(e) => setInputPassword(e.target.value)}
           />
         </Box>
-
         <ButtonBPM
           label={isLogin ? 'Log in' : 'Sign up'}
           variantType='btnMallard'
           font={baskervville}
           type='submit'
         />
-        <p>Forgot your password?</p>
+        <p className='strong' onClick={switchAuthModeHandler}>
+          {strongContent}
+          <span className='underline'> {underlineContent}</span>
+        </p>
       </form>
     </Box>
   );

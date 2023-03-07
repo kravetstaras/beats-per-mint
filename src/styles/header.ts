@@ -1,6 +1,6 @@
 export const header = {
   maxHeight: '134px',
-  padding: '26px 270px 32px 60px',
+  padding: '26px 60px 32px 60px',
   backgroundColor: '#fff',
   width: '100%',
   display: 'flex',
