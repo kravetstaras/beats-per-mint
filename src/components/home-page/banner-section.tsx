@@ -3,6 +3,7 @@ import BannerCard from '@/components/ui/banner-card';
 
 import ButtonBPM from '@/components/ui/button-bpm';
 import { inter } from '@/fonts';
+import { bannersSection } from '@/styles/banners-section';
 
 const bannerItems = [
   {
@@ -23,22 +24,26 @@ const bannerItems = [
 
 export default function BannersSection() {
   return (
-    <Box component='section'>
+    <Box component='section' sx={bannersSection}>
       <div className='mainBanner'>
-        <h3>Welcome to Beats Per Mint</h3>
-        <p>Where NFTs are valued by the culture they create.</p>
+        <p>
+          <span>Welcome</span> to Beats Per Mint
+        </p>
+        <h1>Where NFTs are valued by the culture they create.</h1>
         <ButtonBPM label='How it works' variantType='btnMortar' font={inter} />
       </div>
-      {bannerItems?.length > 0 &&
-        bannerItems.map((banner) => (
-          <BannerCard
-            key={banner.id}
-            image={banner.image}
-            biteText={banner.biteText}
-            title={banner.title}
-            link={banner.link}
-          />
-        ))}
+      <div className='banners'>
+        {bannerItems?.length > 0 &&
+          bannerItems.map((banner) => (
+            <BannerCard
+              key={banner.id}
+              image={banner.image}
+              biteText={banner.biteText}
+              title={banner.title}
+              link={banner.link}
+            />
+          ))}
+      </div>
     </Box>
   );
 }
