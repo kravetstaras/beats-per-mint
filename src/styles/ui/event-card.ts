@@ -42,5 +42,54 @@ export const eventCard = {
     color: '#fff',
   },
 
-  '& > .content > h4': {},
+  '& > .content': {
+    margin: '0',
+    fontWeight: '400',
+    fontSize: '20px',
+    lineHeight: '23px',
+    color: '#000000',
+  },
+
+  '& > .content > h4': {
+    margin: '0',
+    color: '#342B52',
+  },
+
+  '& > .content > h5': {
+    margin: '0',
+    fontWeight: '400',
+    fontSize: '20px',
+    lineHeight: '23px',
+    color: '#565656',
+  },
+
+  '& > .content > ul': {
+    margin: '21px 0 33px 0',
+    padding: '0 0 0 20px',
+  },
+
+  '& > .content > ul > li': {
+    fontWeight: '400',
+    fontSize: '20px',
+    lineHeight: '23px',
+    color: '#000000',
+  },
+
+  '& > .content >  .controls-block': {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  '& > .content >  .controls-block > a': {
+    display: 'flex',
+    justifyContent: 'space-between',
+    gap: '5px',
+    alignItems: 'center',
+    color: '#4D384E',
+  },
+
+  '& > .content >  .controls-block > a:hover': {
+    color: '#1A9DC7',
+  },
 };
