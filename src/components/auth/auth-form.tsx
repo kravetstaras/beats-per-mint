@@ -57,9 +57,14 @@ export default function AuthForm() {
       try {
         const result = await createUser(inputEmail, inputPassword);
         console.log(result.message);
-        setIsLogin(true);
-        setInputEmail('');
-        setInputPassword('');
+        const resultEnter = await signIn('credentials', {
+          redirect: false,
+          email: inputEmail,
+          password: inputPassword,
+        });
+        if (!resultEnter?.error) {
+          router.replace('/');
+        }
       } catch (error) {
         console.error(error);
       }
