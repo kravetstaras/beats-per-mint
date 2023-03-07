@@ -19,7 +19,7 @@ export const bannerCard = {
 export const bannerMask = {
   position: 'absolute',
   top: 0,
-  height: '100%',
+  height: '98%',
   width: '100%',
   background: '#BB874A',
   borderRadius: '50px',
