@@ -8,21 +8,21 @@ import { inter } from '@/fonts';
 const itemsAboutSection = [
   {
     id: '1',
-    image: '/assets/icons/about-section/1.png',
+    image: '/assets/about-section/1.png',
     title: 'Connect with creators',
     description:
       'Beats Per Mint (BPM) is a subscription-based platform that allows fans to connect with artists and communities through blockchain technology.',
   },
   {
     id: '2',
-    image: '/assets/icons/about-section/2.png',
+    image: '/assets/about-section/2.png',
     title: 'Contribute your content',
     description:
       'Featured artists and projects create content that community members can add to. All content is then accessed through a subscription. ',
   },
   {
     id: '3',
-    image: '/assets/icons/about-section/3.png',
+    image: '/assets/about-section/3.png',
     title: 'Archive indefinitely',
     description:
       'As content is created, it’s added to a project community archive and forms the community’s NFT.',
