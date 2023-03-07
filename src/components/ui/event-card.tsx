@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Box from '@mui/material/Box';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import EastIcon from '@mui/icons-material/East';
@@ -28,7 +29,12 @@ export default function EventCard({
   return (
     <Box sx={eventCard} component='div'>
       <div className='image'>
-        <Box component='img' src={image} />
+        <Image
+          src={image}
+          alt={projectName + 'photo'}
+          width={456}
+          height={339}
+        />
         <ButtonBPM
           icon={<PlayArrowIcon fontSize='large' />}
           click={() => console.log('Play')}

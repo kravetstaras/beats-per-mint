@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSession, signOut } from 'next-auth/client';
 import Link from 'next/link';
+import Image from 'next/image';
 import Box from '@mui/material/Box';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
@@ -31,7 +32,12 @@ export default function Header() {
   return (
     <Box sx={header}>
       <Link href='/'>
-        <Box component='img' src='/assets/icons/logo.svg' />
+        <Image
+          src='/assets/icons/logo.svg'
+          alt='BPM-logo'
+          width={80}
+          height={80}
+        />
       </Link>
       <Box component='nav' sx={headerNavBar}>
         {heaaderNavContent.map((link) => (

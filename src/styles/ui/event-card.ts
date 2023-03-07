@@ -6,8 +6,13 @@ export const eventCard = {
   flexDirection: 'column',
   alightItems: 'center',
   padding: '51px 48px 64px 50px',
-  bacgroundColor: '#fff',
+  backgroundColor: '#fff',
   borderRadius: '50px',
+  position: 'relative',
+
+  // '&:hover': {
+  //   top: '-5px',
+  // },
 
   '& > .image': {
     position: 'relative',
@@ -17,8 +22,6 @@ export const eventCard = {
 
   '& > .image > img': {
     borderRadius: '50px',
-    maxWidth: '100%',
-    objectFit: 'contain',
   },
 
   '& > .image > button': {
