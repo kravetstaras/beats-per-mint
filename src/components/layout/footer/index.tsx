@@ -13,7 +13,7 @@ export default function Footer() {
       <FooterNavigation />
       <Box component='p' className={josefinSans.className}>
         <span>Beats Per Mint Site</span>
-        <span>last updated November 2022</span>
+        <span>last updated March 2023</span>
       </Box>
     </Box>
   );
