@@ -5,7 +5,7 @@ export const aboutSection = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  paddingBottom: '177px',
+  paddingBottom: '25px',
 
   '& > h2': {
     fontWeight: '700',
