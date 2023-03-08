@@ -9,12 +9,13 @@ import { footer, grayBlock } from '@/styles/footer';
 export default function Footer() {
   return (
     <>
-      <Box sx={grayBlock} component='section' />
-      <Box sx={footer} component='footer'>
-        <FooterNavigation />
-        <Box component='p' className={josefinSans.className}>
-          <span>Beats Per Mint Site</span>
-          <span>last updated March 2023</span>
+      <Box sx={grayBlock} component='footer'>
+        <Box sx={footer} component='div'>
+          <FooterNavigation />
+          <Box component='p' className={josefinSans.className}>
+            <span>Beats Per Mint Site</span>
+            <span>last updated March 2023</span>
+          </Box>
         </Box>
       </Box>
     </>

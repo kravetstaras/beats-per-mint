@@ -16,6 +16,7 @@ export const footer = {
   textTransform: 'none',
   position: 'relative',
   zIndex: '2',
+  overflow: 'hidden',
 
   '& > div': {
     display: 'flex',
@@ -33,7 +34,7 @@ export const footer = {
 export const grayBlock = {
   position: 'absolute',
   width: '100vw',
-  height: '240px',
+  maxHeight: '240px',
   backgroundColor: '#FAFAFB',
   zIndex: '1',
 };
