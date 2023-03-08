@@ -2,9 +2,14 @@ export const authSection = {
   maxWidth: '1329px',
   margin: '0 auto',
   display: 'flex',
-  flexDirection: 'raw',
-  alightItems: 'center',
   flexWrap: 'nowrap',
+  position: 'relative',
+
+  '@media (max-width: 889px)': {
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 };
 
 export const authForm = {
@@ -65,9 +70,41 @@ export const authForm = {
     borderBottom: '1px solid #1A9DC7',
     cursor: 'pointer',
   },
+
+  '@media (max-width: 1024px)': {
+    padding: '20px',
+  },
+
+  '@media (max-width: 889px)': {
+    width: '100%',
+    padding: '80px 20px 0 20px',
+  },
+
+  '@media (max-width: 768px)': {
+    '& > h3': {
+      margin: '0 auto 15px',
+      fontSize: '20px',
+      lineHeight: '24px',
+    },
+
+    '& > p': {
+      fontSize: '18px',
+      lineHeight: '20px',
+    },
+
+    '& > form > p': {
+      fontSize: '18px',
+      lineHeight: '20px',
+    },
+  },
+
+  '@media (max-width: 430px)': {
+    padding: '120px 0 0 0',
+  },
 };
 
 export const pistachioPart = {
+  boxSizing: 'border-box',
   display: 'flex',
   width: '50%',
   justifyContent: 'center',
@@ -88,6 +125,32 @@ export const pistachioPart = {
   '& > h1 > span': {
     color: '#CAED6B',
     width: '430px',
+  },
+
+  '@media (max-width: 1024px)': {
+    padding: '20px',
+
+    '& > h1': {
+      margin: '0',
+      fontWeight: '700',
+      fontSize: '30px',
+      lineHeight: '36px',
+    },
+  },
+
+  '@media (max-width: 889px)': {
+    width: 'calc(100% + 111px)',
+    margin: '0 auto',
+    borderRadius: '0',
+    position: 'absolute',
+    top: '-40px',
+    left: '-61px',
+  },
+
+  '@media (max-width: 768px)': {
+    width: 'calc(100% + 50px)',
+    top: '-20px',
+    left: '-25px',
   },
 };
 
@@ -123,5 +186,25 @@ export const inputControl = {
 
   '& > label > span': {
     color: '#E75656',
+  },
+
+  '@media (max-width: 768px)': {
+    margin: '5px 0 5px 0',
+
+    '& > div > input': {
+      height: '51px',
+      fontSize: '16px',
+      lineHeight: '18px',
+    },
+
+    '& > label': {
+      outline: 'none',
+      border: 'none',
+      color: '#000000',
+      top: '-30px',
+      left: '-25px',
+      fontSize: '16px',
+      lineHeight: '18px',
+    },
   },
 };
