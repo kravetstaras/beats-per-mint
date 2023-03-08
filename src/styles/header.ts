@@ -2,12 +2,16 @@ export const header = {
   maxHeight: '134px',
   maxWidth: '1350px',
   margin: '0 auto',
-  padding: '26px 60px 32px 60px',
+  padding: '26px 0 32px 0',
   backgroundColor: '#fff',
   width: '100%',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
+
+  '@media (max-width: 1400px)': {
+    padding: '26px 60px 32px 60px',
+  },
 
   '@media (max-width: 768px)': {
     padding: '13px 20px 13px 20px',

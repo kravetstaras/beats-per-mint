@@ -1,5 +1,5 @@
 export const authSection = {
-  maxWidth: '1329px',
+  maxWidth: '1350px',
   margin: '0 auto',
   display: 'flex',
   flexWrap: 'nowrap',
@@ -90,6 +90,7 @@ export const authForm = {
     '& > p': {
       fontSize: '18px',
       lineHeight: '20px',
+      margin: '0 0 10px 0',
     },
 
     '& > form > p': {

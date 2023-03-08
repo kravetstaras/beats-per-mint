@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <title>BPM</title>
       </Head>
-      <body>
+      <body style={{ boxSizing: 'border-box', overflowX: 'hidden' }}>
         <Main />
         <NextScript />
       </body>
