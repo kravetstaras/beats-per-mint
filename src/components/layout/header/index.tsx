@@ -12,10 +12,7 @@ import { IconButton } from '@mui/material';
 
 import { header, headerNavBar } from '@/styles/header';
 
-const heaaderNavContent = [
-  { title: 'discover', id: 1, link: '/' },
-  { title: 'about', id: 2, link: '/' },
-];
+const heaaderNavContent = [{ title: 'discover', id: 1, link: '/' }];
 
 export default function Header() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -55,7 +52,7 @@ export default function Header() {
               aria-haspopup='true'
               onClick={handleMenu}
               color='inherit'>
-              <AccountCircle />
+              <AccountCircle fontSize='inherit' />
             </IconButton>
             <Menu
               id='menu-appbar'

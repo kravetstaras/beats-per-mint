@@ -4,16 +4,25 @@ export const header = {
   backgroundColor: '#fff',
   width: '100%',
   display: 'flex',
-  alightItems: 'center',
+  alignItems: 'center',
   justifyContent: 'space-between',
+
+  '@media (max-width: 768px)': {
+    padding: '13px 20px 13px 20px',
+
+    '& > a > img': {
+      width: '40px',
+      height: '40px',
+    },
+  },
 };
 
 export const headerNavBar = {
   boxSizing: 'border-box',
   display: 'flex',
   gap: '80px',
-  alignItems: 'center',
   justifyContent: 'center',
+  alignItems: 'center',
   position: 'relative',
 
   '& > a': {
@@ -27,8 +36,27 @@ export const headerNavBar = {
     letterSpacing: '1px',
   },
 
+  '& > div > button > svg': {
+    width: '48px',
+    height: '48px',
+  },
+
   '& > a:hover, & > a:active': {
     fontWeight: '700',
     letterSpacing: '0.14px',
+  },
+
+  '@media (max-width: 768px)': {
+    gap: '20px',
+
+    '& > a': {
+      fontSize: '16px',
+      lineHeight: '18px',
+    },
+
+    '& > div > button > svg': {
+      width: '24px',
+      height: '24px',
+    },
   },
 };
