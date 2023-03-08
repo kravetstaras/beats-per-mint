@@ -1,6 +1,7 @@
 export const footer = {
   maxHeight: '240px',
-  width: '100%',
+  maxWidth: '1350px',
+  margin: '0 auto',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
@@ -13,9 +14,12 @@ export const footer = {
   backgroundColor: '#4D384E',
   borderRadius: '100px 100px 0px 0px',
   textTransform: 'none',
+  position: 'relative',
+  zIndex: '2',
 
   '& > div': {
     display: 'flex',
+    justifyContent: 'center',
     gap: '32px',
   },
 
@@ -24,4 +28,12 @@ export const footer = {
     display: 'flex',
     flexDirection: 'column',
   },
+};
+
+export const grayBlock = {
+  position: 'absolute',
+  width: '100vw',
+  height: '240px',
+  backgroundColor: '#FAFAFB',
+  zIndex: '1',
 };

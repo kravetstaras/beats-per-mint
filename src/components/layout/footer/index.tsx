@@ -1,20 +1,22 @@
 import React from 'react';
 import FooterNavigation from '@/components/layout/footer/footer-navigation';
 import Box from '@mui/material/Box';
-import EditIcon from '@mui/icons-material/Edit';
 
 import { josefinSans } from '@/fonts';
 
-import { footer } from '@/styles/footer';
+import { footer, grayBlock } from '@/styles/footer';
 
 export default function Footer() {
   return (
-    <Box sx={footer} component='footer'>
-      <FooterNavigation />
-      <Box component='p' className={josefinSans.className}>
-        <span>Beats Per Mint Site</span>
-        <span>last updated March 2023</span>
+    <>
+      <Box sx={grayBlock} component='section' />
+      <Box sx={footer} component='footer'>
+        <FooterNavigation />
+        <Box component='p' className={josefinSans.className}>
+          <span>Beats Per Mint Site</span>
+          <span>last updated March 2023</span>
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 }

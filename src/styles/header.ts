@@ -1,5 +1,7 @@
 export const header = {
   maxHeight: '134px',
+  maxWidth: '1350px',
+  margin: '0 auto',
   padding: '26px 60px 32px 60px',
   backgroundColor: '#fff',
   width: '100%',
