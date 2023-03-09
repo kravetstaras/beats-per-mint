@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import { useSession, signOut } from 'next-auth/client';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -17,6 +18,7 @@ const heaaderNavContent = [{ title: 'discover', id: 1, link: '/' }];
 export default function Header() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [session, loading] = useSession();
+  const router = useRouter();
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -68,7 +70,9 @@ export default function Header() {
               }}
               open={Boolean(anchorEl)}
               onClose={handleClose}>
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
+              <MenuItem onClick={() => router.push('/profile')}>
+                Profile
+              </MenuItem>
               <MenuItem onClick={() => signOut()}>Log out</MenuItem>
             </Menu>
           </div>
