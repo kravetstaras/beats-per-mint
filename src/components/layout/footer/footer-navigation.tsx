@@ -2,9 +2,11 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import TelegramIcon from '@mui/icons-material/Telegram';
-import InstagramIcon from '@mui/icons-material/Instagram';
+
+import DiscordIcon from '@/components/ui/svg/discord';
 
 import ButtonBPM from '@/components/ui/button-bpm';
+import MUIsvg from '@/components/ui/svg';
 
 const footerNavifations = [
   {
@@ -15,7 +17,7 @@ const footerNavifations = [
   },
   {
     link: '#',
-    icon: <InstagramIcon fontSize='large' />,
+    icon: <MUIsvg fontSize='large' icon={<DiscordIcon />} />,
     id: 2,
     variantType: 'btnSulu',
   },
