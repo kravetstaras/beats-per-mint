@@ -1,6 +1,8 @@
 import React from 'react';
-import EventCard from '@/components/ui/event-card';
+
 import Box from '@mui/material/Box';
+import EventCard from '@/components/ui/event-card';
+
 import { discoverSection } from '@/styles/discover-section';
 
 const projects = [
