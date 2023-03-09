@@ -35,13 +35,17 @@ export const btnAlto = {
   padding: '6px 19px 9px 17px',
   display: 'flex',
   gap: '4px',
-  alightItems: 'center',
+  alignItems: 'center',
   justifyContent: 'center',
   backgroundColor: '#D9D9D9',
   borderRadius: '30px',
   transition: '1s',
   textTransform: 'none',
   whiteSpace: 'nowrap',
+
+  '& > span': {
+    display: 'flex',
+  },
 
   '&:hover': {
     backgroundColor: '#1A9DC7',

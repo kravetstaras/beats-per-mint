@@ -38,9 +38,9 @@ export default function ButtonBPM({
       variant={variantType}
       onClick={click && click}
       disabled={isDisabled}>
-      {label && <span className={font && font.className}>{validLabel}</span>}
       {link && <a href={link}>{icon}</a>}
       {icon && !link && <span>{icon}</span>}
+      {label && <span className={font && font.className}>{validLabel}</span>}
     </Button>
   );
 }
