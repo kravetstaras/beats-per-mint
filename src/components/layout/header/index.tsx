@@ -40,11 +40,24 @@ export default function Header() {
       </Link>
       <Box component='nav' sx={headerNavBar}>
         {heaaderNavContent.map((link) => (
-          <Link key={link.id} href={link.link}>
+          <Link
+            key={link.id}
+            href={link.link}
+            style={{
+              fontWeight: router.pathname === link.link ? '700' : '400',
+            }}>
             {capitalizeFirstLetter(link.title)}
           </Link>
         ))}
-        {!session && !loading && <Link href='/auth'>Log in</Link>}
+        {!session && !loading && (
+          <Link
+            href='/auth'
+            style={{
+              fontWeight: router.pathname === '/auth' ? '700' : '400',
+            }}>
+            Log in
+          </Link>
+        )}
         {session && (
           <div>
             <IconButton

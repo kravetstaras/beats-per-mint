@@ -47,11 +47,6 @@ export const headerNavBar = {
     height: '48px',
   },
 
-  '& > a:hover, & > a:active': {
-    fontWeight: '700',
-    letterSpacing: '0.14px',
-  },
-
   '@media (max-width: 768px)': {
     gap: '20px',
 
