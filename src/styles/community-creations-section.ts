@@ -2,12 +2,12 @@ export const communityCreationsSection = {
 	maxWidth: '1350px',
 	margin: '0 auto',
 	position: 'relative',
-	zIndex: '3',
+	zIndex: '1',
 
 	'&::before': {
 		content: '""',
 		position: 'absolute',
-		zIndex: '-1',
+		zIndex: '-2',
 		height: '558px',
 		width: 'calc(100vw + 131px)',
 		top: '-330px',
