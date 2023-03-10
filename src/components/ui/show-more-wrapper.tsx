@@ -11,11 +11,15 @@ import { showMoreWrapper } from '@/styles/ui/show-more-wrapper';
 type TShowMoreWrapper = {
   children: React.ReactNode;
   maxHeight?: number;
+  length: number;
+  wrappIf?: number;
 };
 
 export default function ShowMoreWrapper({
   children,
   maxHeight = 400,
+  length,
+  wrappIf = 1,
 }: TShowMoreWrapper) {
   const [showMore, setShowMore] = useState(false);
 
@@ -25,27 +29,33 @@ export default function ShowMoreWrapper({
 
   return (
     <Box sx={showMoreWrapper} className='wrapper'>
-      <Box
-        sx={{
-          maxHeight: showMore ? `${maxHeight}px` : '100%',
-        }}
-        className='childrenWrapper'>
-        {children}
-      </Box>
-      {showMore && <div className='shadow' />}
-      <ButtonBPM
-        label={showMore ? 'show more' : 'show less'}
-        icon={
-          showMore ? (
-            <ExpandMoreIcon fontSize='small' />
-          ) : (
-            <ExpandLessIcon fontSize='small' />
-          )
-        }
-        variantType='btnAlto'
-        font={helvetica}
-        click={toggleShowMore}
-      />
+      {length > wrappIf ? (
+        <>
+          <Box
+            sx={{
+              maxHeight: !showMore ? `${maxHeight}px` : '100%',
+            }}
+            className='childrenWrapper'>
+            {children}
+          </Box>
+          {!showMore && <div className='shadow' />}
+          <ButtonBPM
+            label={!showMore ? 'show more' : 'show less'}
+            icon={
+              !showMore ? (
+                <ExpandMoreIcon fontSize='small' />
+              ) : (
+                <ExpandLessIcon fontSize='small' />
+              )
+            }
+            variantType='btnAlto'
+            font={helvetica}
+            click={toggleShowMore}
+          />
+        </>
+      ) : (
+        <div>{children}</div>
+      )}
     </Box>
   );
 }

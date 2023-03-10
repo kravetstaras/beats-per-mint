@@ -44,7 +44,9 @@ export default function DiscoverSection() {
     <Box component='section' sx={discoverSection}>
       <h2>Discover BPMs</h2>
       <div className='grid'>
-        <ShowMoreWrapper maxHeight={isMobile ? 150 : 400}>
+        <ShowMoreWrapper
+          maxHeight={isMobile ? 150 : 400}
+          length={projects.length}>
           {projects?.length > 0 &&
             projects.map((project) => (
               <EventCard
