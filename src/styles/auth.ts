@@ -61,7 +61,6 @@ export const authForm = {
     textAlign: 'center',
     fontWeight: '700',
     margin: '0 0 33px 0',
-    cursor: 'pointer',
   },
 
   '& > form > .strong > .underline': {

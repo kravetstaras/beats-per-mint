@@ -71,11 +71,11 @@ export default function AuthForm() {
     }
   }
 
-  const underlineContent = isLogin ? 'click to sign up' : 'click to log in';
+  const underlineContent = isLogin ? 'click to sign up' : 'log in';
 
   const strongContent = isLogin
     ? 'Don’t have an account?'
-    : 'Login with existing account';
+    : 'Already have an acount';
 
   return (
     <Box sx={authForm}>
@@ -110,9 +110,12 @@ export default function AuthForm() {
           font={baskervville}
           type='submit'
         />
-        <p className='strong' onClick={switchAuthModeHandler}>
+        <p className='strong'>
           {strongContent}
-          <span className='underline'> {underlineContent}</span>
+          <span className='underline' onClick={switchAuthModeHandler}>
+            {' '}
+            {underlineContent}
+          </span>
         </p>
       </form>
     </Box>
