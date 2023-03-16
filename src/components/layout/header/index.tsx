@@ -28,6 +28,12 @@ export default function Header() {
 		setAnchorEl(null);
 	};
 
+	const handleCloseWithSleep = () => {
+		setTimeout(() => {
+			setAnchorEl(null);
+		}, 200);
+	};
+
 	const handleClickProfile = (event: React.MouseEvent<HTMLElement>) => {
 		handleClose();
 		router.push('/profile');
@@ -94,8 +100,12 @@ export default function Header() {
 								vertical: 'top',
 								horizontal: 'right',
 							}}
-							open={Boolean(anchorEl)}
+							open={!!anchorEl}
 							onClose={handleClose}
+							MenuListProps={{
+								'aria-labelledby': 'account-button',
+								onMouseLeave: handleCloseWithSleep,
+							}}
 						>
 							<MenuItem onClick={handleClickProfile}>Profile</MenuItem>
 							<MenuItem onClick={handleClickLogOut}>Log out</MenuItem>
